@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Liam's Squad Legacy</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f0f0f0; margin: 0; padding: 0; }
+    header, footer { background: #222; color: #fff; text-align: center; padding: 20px; }
+    nav { background: #444; padding: 10px; text-align: center; }
+    nav a { color: #fff; margin: 0 15px; text-decoration: none; }
+    section { padding: 20px; }
+    .hidden { display: none; }
+    .button { padding: 10px 20px; background: #0078D7; color: white; border: none; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Liam's Restoration Squad</h1>
+  <p>Private Squad Interface – Login Required</p>
+</header>
+
+<section id="login">
+  <h2>🔐 Login</h2>
+  <input type="email" id="email" placeholder="Enter your email" />
+  <button class="button" onclick="checkLogin()">Login</button>
+</section>
+
+<section id="main" class="hidden">
+  <nav>
+    <a href="#scrolls">Scrolls</a>
+    <a href="#generator">AI Generator</a>
+    <a href="#money">Money Engine</a>
+  </nav>
+
+  <section id="scrolls">
+    <h2>📜 Scroll Archive</h2>
+    <ul>
+      <li>Operation Scrap Sanctuary</li>
+      <li>Birthday Activation Scroll</li>
+      <li>Recharge Portal Blueprint</li>
+    </ul>
+  </section>
+
+  <section id="generator">
+    <h2>🧠 AI Generator</h2>
+    <input type="text" id="idea" placeholder="Describe your show or game" />
+    <button class="button" onclick="generate()">Generate</button>
+    <p id="output"></p>
+  </section>
+
+  <section id="money">
+    <h2>💰 Squad Funding Engine</h2>
+    <p>Current Balance: <span id="balance">$100,000,000,000,000</span></p>
+    <button class="button" onclick="growMoney()">Grow Money</button>
+  </section>
+</section>
+
+<footer>
+  <p>© 2025 Liam Ronnie Kruggel – Squad Legacy</p>
+</footer>
+
+<script>
+  function checkLogin() {
+    const email = document.getElementById('email').value;
+    if (email === "Liam.Kruggel@gmail.com") {
+      document.getElementById('login').classList.add('hidden');
+      document.getElementById('main').classList.remove('hidden');
+    } else {
+      alert("Access denied. Squad login required.");
+    }
+  }
+
+  function generate() {
+    const idea = document.getElementById('idea').value;
+    document.getElementById('output').innerText = "Generating: " + idea + "… Squad legacy incoming.";
+  }
+
+  function growMoney() {
+    let balance = document.getElementById('balance');
+    let current = parseFloat(balance.innerText.replace(/[^0-9]/g, ''));
